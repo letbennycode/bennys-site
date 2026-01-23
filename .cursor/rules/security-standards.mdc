@@ -1,0 +1,75 @@
+---
+description: Security standards and best practices that must be followed in all code
+alwaysApply: true
+---
+
+# Security Standards
+
+## Core Security Principles
+
+### Never Trust User Input
+- Always validate and sanitize all user inputs
+- Use parameterized queries for database operations
+- Escape output to prevent XSS attacks
+- Validate file uploads (type, size, content)
+
+### Principle of Least Privilege
+- Grant minimum necessary permissions
+- Use role-based access control (RBAC)
+- Verify authorization at every access point
+- Don't rely solely on client-side checks
+
+### Defense in Depth
+- Implement multiple layers of security
+- Don't rely on a single security control
+- Fail securely (deny by default)
+
+### Secure by Default
+- Use secure defaults
+- Enable security features explicitly
+- Disable unnecessary features/services
+
+## Required Security Practices
+
+### Authentication
+- Use strong password requirements (12+ chars, complexity)
+- Implement account lockout after failed attempts
+- Use secure session management
+- Implement multi-factor authentication (MFA) for sensitive operations
+- Never store passwords in plain text (use bcrypt/argon2)
+
+### Authorization
+- Check permissions on every request
+- Validate user can access requested resources
+- Implement proper role-based access control
+- Log authorization failures
+
+### Data Protection
+- Encrypt sensitive data at rest
+- Use HTTPS/TLS for data in transit
+- Never log sensitive data (passwords, tokens, PII)
+- Implement proper data retention policies
+
+### Error Handling
+- Never expose sensitive information in error messages
+- Log errors securely (server-side only)
+- Use generic error messages for users
+- Don't reveal system internals
+
+### Secrets Management
+- Never hardcode secrets, API keys, or passwords
+- Use environment variables or secrets management services
+- Rotate secrets regularly
+- Don't commit secrets to version control
+
+## Security Checklist Before Commit
+
+- [ ] All user inputs validated
+- [ ] No hardcoded secrets
+- [ ] Authorization checks in place
+- [ ] SQL injection prevented (parameterized queries)
+- [ ] XSS prevented (output encoding)
+- [ ] Error messages don't leak information
+- [ ] Dependencies are up-to-date and secure
+- [ ] Sensitive data is encrypted
+- [ ] Security events are logged

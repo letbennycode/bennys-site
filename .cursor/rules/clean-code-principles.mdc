@@ -1,0 +1,79 @@
+---
+description: Clean code principles and best practices for staff-level engineering
+alwaysApply: true
+---
+
+# Clean Code Principles
+
+## Naming Conventions
+
+**Classes and Functions:**
+- Use descriptive names that reveal intent
+- Avoid abbreviations unless they're universally understood
+- Use verbs for functions, nouns for classes
+- Boolean functions should read like questions: `isValid()`, `hasPermission()`
+
+```typescript
+// ❌ BAD
+function proc(d: Data): Result { }
+
+// ✅ GOOD
+function processUserRegistration(userData: RegistrationData): RegistrationResult { }
+```
+
+## Function Design
+
+**Keep functions small:**
+- Functions should do one thing
+- Extract complex logic into well-named helper functions
+- Prefer multiple small functions over one large function
+
+```typescript
+// ❌ BAD
+function handleUserRequest(req: Request) {
+  // 100 lines of mixed concerns
+}
+
+// ✅ GOOD
+function handleUserRequest(req: Request) {
+  const user = authenticateUser(req);
+  const validatedData = validateRequestData(req.body);
+  return processUserAction(user, validatedData);
+}
+```
+
+## Error Handling
+
+**Always handle errors explicitly:**
+- Never swallow exceptions silently
+- Provide meaningful error messages
+- Use appropriate error types
+
+```typescript
+// ❌ BAD
+try {
+  await saveData(data);
+} catch (e) {}
+
+// ✅ GOOD
+try {
+  await saveData(data);
+} catch (error) {
+  logger.error('Failed to save user data', { error, userId: data.userId });
+  throw new DataPersistenceError('Unable to save user registration', { cause: error });
+}
+```
+
+## Code Organization
+
+- Group related functionality together
+- Keep dependencies pointing in one direction
+- Separate concerns (business logic, data access, presentation)
+- Use dependency injection for testability
+
+## Comments
+
+- Code should be self-documenting
+- Comments should explain "why", not "what"
+- Remove commented-out code
+- Keep comments up-to-date with code changes
