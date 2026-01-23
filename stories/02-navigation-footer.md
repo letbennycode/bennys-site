@@ -46,6 +46,7 @@ const navItems = [
 
 ## Dependencies
 - Story 1: Project Setup (must be complete)
+- Story 1.5: Design System & Aesthetic Foundation (must be complete)
 
 ## Notes
 - Keep navigation minimal and functional

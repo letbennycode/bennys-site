@@ -51,6 +51,7 @@ interface MusicItem {
 
 ## Dependencies
 - Story 1: Project Setup
+- Story 1.5: Design System & Aesthetic Foundation
 - Story 2: Navigation & Footer
 
 ## Notes

@@ -5,13 +5,14 @@ This directory contains user stories for the personal website project. Each stor
 ## Story Order
 
 1. **[01-project-setup.md](01-project-setup.md)** - Initialize Next.js project with TypeScript and Tailwind CSS
-2. **[02-navigation-footer.md](02-navigation-footer.md)** - Create navigation and footer components
-3. **[03-landing-page.md](03-landing-page.md)** - Build landing page with hero and about section
-4. **[04-about-page.md](04-about-page.md)** - Create expanded about me page
-5. **[05-articles-system.md](05-articles-system.md)** - Implement articles system with markdown
-6. **[06-music-page.md](06-music-page.md)** - Build music showcase page with embeds
-7. **[07-contact-form.md](07-contact-form.md)** - Create contact form with Resend integration
-8. **[08-polish-deploy.md](08-polish-deploy.md)** - Polish, optimize, and deploy to Vercel
+2. **[01.5-design-system.md](01.5-design-system.md)** - Establish Tom Sachs-inspired design system and aesthetic foundation
+3. **[02-navigation-footer.md](02-navigation-footer.md)** - Create navigation and footer components
+4. **[03-landing-page.md](03-landing-page.md)** - Build landing page with hero and about section
+5. **[04-about-page.md](04-about-page.md)** - Create expanded about me page
+6. **[05-articles-system.md](05-articles-system.md)** - Implement articles system with markdown
+7. **[06-music-page.md](06-music-page.md)** - Build music showcase page with embeds
+8. **[07-contact-form.md](07-contact-form.md)** - Create contact form with Resend integration
+9. **[08-polish-deploy.md](08-polish-deploy.md)** - Polish, optimize, and deploy to Vercel
 
 ## How to Use
 
