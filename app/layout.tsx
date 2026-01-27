@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
@@ -9,6 +10,18 @@ const inter = Inter({
   weight: ['400', '700'],
   display: 'swap',
   variable: '--font-inter',
+})
+
+const rocketSharpie = localFont({
+  src: [
+    {
+      path: '../assets/fonts/Web-PS/Rocket Sharpie Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-rocket-sharpie',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -44,7 +57,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${rocketSharpie.variable}`}>
       <body>
         <Navigation />
         <main className="pt-16 min-h-screen">
