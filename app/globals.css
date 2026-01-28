@@ -18,12 +18,19 @@
     background: var(--background);
   }
 
+  .main-header {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply uppercase font-bold;
+  }
+
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl;
+    @apply uppercase font-bold;
   }
 
   h2 {
     @apply text-3xl md:text-4xl lg:text-5xl;
+    @apply font-display
   }
 
   h3 {
@@ -47,15 +54,21 @@
     @apply hover:underline;
     @apply transition-all;
     @apply font-display font-bold uppercase tracking-tight;
+    font-family: "Courier", "Courier New", monospace;
   }
 
   p {
     @apply text-base leading-relaxed;
     @apply font-display font-bold uppercase tracking-tight;
+    font-family: "Courier", "Courier New", monospace;
   }
 }
 
 @layer utilities {
+  .font-courier {
+    font-family: "Courier", "Courier New", monospace;
+  }
+
   .text-balance {
     text-wrap: balance;
   }

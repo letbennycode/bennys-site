@@ -9,6 +9,7 @@ export const designTokens = {
   // Typography
   typography: {
     fontFamily: {
+      courier: ['Courier', 'Courier New', 'monospace'],
       sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif'],
     },
     fontSize: {

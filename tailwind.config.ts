@@ -44,6 +44,7 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'Helvetica', 'Arial', 'sans-serif'],
         display: ['var(--font-rocket-sharpie)', 'Rocket Sharpie Bold', 'serif'],
+        courier: ['Courier', 'Courier New', 'monospace'],
       },
       fontWeight: {
         normal: '400',
