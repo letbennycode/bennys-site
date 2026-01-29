@@ -1,13 +1,13 @@
 import Link from 'next/link'
-import { Article } from '@/lib/articles'
+import { Work } from '@/lib/works'
 
-interface ArticleCardProps {
-  article: Article
+interface WorksCardProps {
+  work: Work
 }
 
-export default function ArticleCard({ article }: ArticleCardProps) {
-  const formattedDate = article.date
-    ? new Date(article.date).toLocaleDateString('en-US', {
+export default function WorksCard({ work }: WorksCardProps) {
+  const formattedDate = work.date
+    ? new Date(work.date).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
@@ -16,20 +16,20 @@ export default function ArticleCard({ article }: ArticleCardProps) {
 
   return (
     <Link
-      href={`/articles/${article.slug}`}
+      href={`/works/${work.slug}`}
       className="block border-b border-black py-6 hover:bg-gray-50 transition-colors"
     >
       <h2 className="text-2xl font-bold uppercase tracking-tight text-black mb-2">
-        {article.title}
+        {work.title}
       </h2>
       {formattedDate && (
         <p className="text-sm text-black mb-3 uppercase tracking-wide">
           {formattedDate}
         </p>
       )}
-      {article.excerpt && (
+      {work.excerpt && (
         <p className="text-black leading-relaxed">
-          {article.excerpt}
+          {work.excerpt}
         </p>
       )}
     </Link>

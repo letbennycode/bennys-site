@@ -10,7 +10,7 @@ const LOGO_SIZE = 32; // small logo size
 const navItems = [
   { label: 'HOME', href: '/' },
   { label: 'ABOUT', href: '/about' },
-  { label: 'ARTICLES', href: '/articles' },
+  { label: 'WORKS', href: '/works' },
   { label: 'MUSIC', href: '/music' },
   { label: 'CONTACT', href: '/contact' },
 ]

@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
     await resend.emails.send({
       from: fromEmail,
       to: recipientEmail,
-      replyTo: sanitizedEmail,
+      reply_to: sanitizedEmail,
       subject: `Contact form submission from ${sanitizedName}`,
       html: `
         <h2>New Contact Form Submission</h2>

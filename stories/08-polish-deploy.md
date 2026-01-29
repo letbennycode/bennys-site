@@ -52,7 +52,7 @@ Final polish, performance optimization, SEO improvements, and deployment to Verc
 - [ ] Responsive on mobile, tablet, desktop
 - [ ] No broken links
 - [ ] Contact form sends emails
-- [ ] Articles render correctly
+- [ ] Works render correctly
 - [ ] Music embeds work
 
 ### Accessibility

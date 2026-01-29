@@ -5,7 +5,7 @@ Create the Tom Sachs-inspired navigation system and footer component with social
 
 ## Acceptance Criteria
 - [ ] Navigation component matches Tom Sachs aesthetic (minimal, bold typography)
-- [ ] Navigation includes: HOME, ABOUT, ARTICLES, MUSIC, CONTACT
+- [ ] Navigation includes: HOME, ABOUT, WORKS, MUSIC, CONTACT
 - [ ] Hamburger menu for mobile responsiveness
 - [ ] Navigation is sticky/fixed at top
 - [ ] Footer component with LinkedIn and YouTube links
@@ -34,7 +34,7 @@ Create the Tom Sachs-inspired navigation system and footer component with social
 const navItems = [
   { label: 'HOME', href: '/' },
   { label: 'ABOUT', href: '/about' },
-  { label: 'ARTICLES', href: '/articles' },
+  { label: 'WORKS', href: '/works' },
   { label: 'MUSIC', href: '/music' },
   { label: 'CONTACT', href: '/contact' }
 ]

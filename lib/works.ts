@@ -2,9 +2,9 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-const articlesDirectory = path.join(process.cwd(), 'content/articles')
+const worksDirectory = path.join(process.cwd(), 'content/works')
 
-export interface Article {
+export interface Work {
   slug: string
   title: string
   date: string
@@ -12,17 +12,17 @@ export interface Article {
   content: string
 }
 
-export function getAllArticles(): Article[] {
-  if (!fs.existsSync(articlesDirectory)) {
+export function getAllWorks(): Work[] {
+  if (!fs.existsSync(worksDirectory)) {
     return []
   }
 
-  const fileNames = fs.readdirSync(articlesDirectory)
-  const articles = fileNames
+  const fileNames = fs.readdirSync(worksDirectory)
+  const works = fileNames
     .filter((name) => name.endsWith('.md'))
     .map((fileName) => {
       const slug = fileName.replace(/\.md$/, '')
-      const fullPath = path.join(articlesDirectory, fileName)
+      const fullPath = path.join(worksDirectory, fileName)
       const fileContents = fs.readFileSync(fullPath, 'utf8')
       const { data, content } = matter(fileContents)
 
@@ -35,7 +35,7 @@ export function getAllArticles(): Article[] {
       }
     })
 
-  return articles.sort((a, b) => {
+  return works.sort((a, b) => {
     if (a.date < b.date) {
       return 1
     } else {
@@ -44,8 +44,8 @@ export function getAllArticles(): Article[] {
   })
 }
 
-export function getArticleBySlug(slug: string): Article | null {
-  const fullPath = path.join(articlesDirectory, `${slug}.md`)
+export function getWorkBySlug(slug: string): Work | null {
+  const fullPath = path.join(worksDirectory, `${slug}.md`)
   
   if (!fs.existsSync(fullPath)) {
     return null

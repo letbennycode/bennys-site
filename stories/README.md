@@ -9,7 +9,7 @@ This directory contains user stories for the personal website project. Each stor
 3. **[02-navigation-footer.md](02-navigation-footer.md)** - Create navigation and footer components
 4. **[03-landing-page.md](03-landing-page.md)** - Build landing page with hero and about section
 5. **[04-about-page.md](04-about-page.md)** - Create expanded about me page
-6. **[05-articles-system.md](05-articles-system.md)** - Implement articles system with markdown
+6. **[05-works-system.md](05-works-system.md)** - Implement works system with markdown
 7. **[06-music-page.md](06-music-page.md)** - Build music showcase page with embeds
 8. **[07-contact-form.md](07-contact-form.md)** - Create contact form with Resend integration
 9. **[08-polish-deploy.md](08-polish-deploy.md)** - Polish, optimize, and deploy to Vercel

@@ -1,44 +1,44 @@
-import { getAllArticles, getArticleBySlug } from '@/lib/articles'
+import { getAllWorks, getWorkBySlug } from '@/lib/works'
 import ReactMarkdown from 'react-markdown'
 import { notFound } from 'next/navigation'
 
-interface ArticlePageProps {
+interface WorkPageProps {
   params: {
     slug: string
   }
 }
 
 export async function generateStaticParams() {
-  const articles = getAllArticles()
-  return articles.map((article) => ({
-    slug: article.slug,
+  const works = getAllWorks()
+  return works.map((work) => ({
+    slug: work.slug,
   }))
 }
 
-export async function generateMetadata({ params }: ArticlePageProps) {
-  const article = getArticleBySlug(params.slug)
+export async function generateMetadata({ params }: WorkPageProps) {
+  const work = getWorkBySlug(params.slug)
 
-  if (!article) {
+  if (!work) {
     return {
-      title: 'Article Not Found',
+      title: 'Work Not Found',
     }
   }
 
   return {
-    title: `${article.title} | Benny's Site`,
-    description: article.excerpt,
+    title: `${work.title} | Benny's Site`,
+    description: work.excerpt,
   }
 }
 
-export default function ArticlePage({ params }: ArticlePageProps) {
-  const article = getArticleBySlug(params.slug)
+export default function WorkPage({ params }: WorkPageProps) {
+  const work = getWorkBySlug(params.slug)
 
-  if (!article) {
+  if (!work) {
     notFound()
   }
 
-  const formattedDate = article.date
-    ? new Date(article.date).toLocaleDateString('en-US', {
+  const formattedDate = work.date
+    ? new Date(work.date).toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
@@ -49,7 +49,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
       <header className="mb-8">
         <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-tight text-black mb-4">
-          {article.title}
+          {work.title}
         </h1>
         {formattedDate && (
           <p className="text-sm text-black uppercase tracking-wide">
@@ -90,7 +90,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
             ),
           }}
         >
-          {article.content}
+          {work.content}
         </ReactMarkdown>
       </div>
     </article>
